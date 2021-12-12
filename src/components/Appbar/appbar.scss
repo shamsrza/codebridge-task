@@ -1,0 +1,21 @@
+@import "../../styles/base";
+
+.appbar {
+  color: $black;
+  position: absolute;
+  width: 600px;
+  height: 80px;
+  left: 75px;
+  top: 50px;
+  right: 765px;
+  // border: 1px solid red;
+
+  &__content {
+    flex-direction: column;
+    align-items: flex-start;
+    display: flex;
+    padding: 0px;
+    width: 600px;
+    // border: 1px solid green;
+  }
+}

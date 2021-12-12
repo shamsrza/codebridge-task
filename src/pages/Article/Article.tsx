@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Article = () => {
-    return (
-        <div>
-            Article page
-        </div>
-    )
-}
+  return <div>Article page</div>;
+};
 
-export default Article
+export default Article;

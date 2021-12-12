@@ -1,10 +1,11 @@
-const initState = {
-    testName: ''
-}
+import {combineReducers} from 'redux'
 
-export default function rootReducer(state= initState, action: any){
-    switch(action.type){
-        default: 
-            return state
-    }
-}
+import articleReducer from './ArticleReducer' 
+
+
+const rootReducer =
+    combineReducers({
+        articleReducer,
+    })
+
+export default rootReducer

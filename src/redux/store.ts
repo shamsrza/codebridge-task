@@ -2,8 +2,8 @@ import {createStore, applyMiddleware, compose} from 'redux'
 import thunk from 'redux-thunk'
 
 import rootReducer from './reducers'
+
 const initState={
-    testName: ""
 }
 
 
@@ -19,7 +19,7 @@ export default function makeStore(initialState=initState){
       }
 
       //create redux store
-    const store =createStore(rootReducer, initialState,composeEnhancers(applyMiddleware(...middlewares)) )
+    const store = createStore(rootReducer, initialState,composeEnhancers(applyMiddleware(...middlewares)) )
 
     if ((module as any).hot) {
         ;(module as any).hot.accept('./reducers', () => {
