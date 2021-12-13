@@ -4,16 +4,17 @@ import "./appbar.scss";
 
 const Appbar = () => {
   return (
-    <div className="appbar container">
+    <div className="appbar">
       <div className="appbar__content">
         {/* Title for search bar */}
         <div className="appbar__title">
           <h2>Filter by keywords</h2>
         </div>
         {/* Search bar */}
-        <div className="appbar__search">
-          <Search />
-        </div>
+        <Search />
+      </div>
+      <div className="result">
+        <h2>Result: </h2>
       </div>
     </div>
   );
