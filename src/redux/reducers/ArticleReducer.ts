@@ -1,4 +1,4 @@
-import {ArticleReducerState, FETCH_ARTICLES,FETCH_ARTICLES_SUCCESS, FETCH_ARTICLES_FAILURE} from '../../types'
+import {ArticleReducerState, FETCH_ARTICLES_LOADING,FETCH_ARTICLES_SUCCESS, FETCH_ARTICLES_FAILURE} from '../../types'
 
 const initiState:ArticleReducerState = {
     articles: [],
@@ -9,7 +9,7 @@ const initiState:ArticleReducerState = {
 export default function articleReducer(state: ArticleReducerState=initiState, action:any){
     switch(action.type){
         // fetch article, loading true
-        case FETCH_ARTICLES:
+        case FETCH_ARTICLES_LOADING:
             return {
                 ...state,
                 isLoading: true

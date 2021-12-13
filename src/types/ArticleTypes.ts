@@ -1,6 +1,6 @@
 
 //reducer case constants
-export const FETCH_ARTICLES = "FETCH_ARTICLES"
+export const FETCH_ARTICLES_LOADING = "FETCH_ARTICLES_LOADING"
 export const FETCH_ARTICLES_SUCCESS = "FETCH_ARTICLES_SUCCESS"
 export const FETCH_ARTICLES_FAILURE = "FETCH_ARTICLES_FAILURE"
 
@@ -13,8 +13,8 @@ export type ArticleReducerState = {
 }
 
 //action types
-export type FetchAllArticlesAction = {
-    type: typeof FETCH_ARTICLES
+export type FetchAllArticlesLoadingAction = {
+    type: typeof FETCH_ARTICLES_LOADING
     payload?: string
 }
 
@@ -28,4 +28,4 @@ export type FetchAllArticlesFailureAction = {
     payload: string
 }
 
-export type ArticleActions = FetchAllArticlesAction | FetchAllArticlesSuccessAction | FetchAllArticlesFailureAction
+export type ArticleActions = FetchAllArticlesLoadingAction | FetchAllArticlesSuccessAction | FetchAllArticlesFailureAction

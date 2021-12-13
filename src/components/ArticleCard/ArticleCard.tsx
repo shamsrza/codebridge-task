@@ -2,7 +2,8 @@ import React from "react";
 import CalendarTodayOutlinedIcon from "@material-ui/icons/CalendarTodayOutlined";
 import ArrowForwardOutlinedIcon from "@material-ui/icons/ArrowForwardOutlined";
 // import { Link } from "@material-ui/core";
-
+import { format } from "date-fns";
+//import moment from "moment";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -11,88 +12,67 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
 import "./articlecard.scss";
-import { capitalize } from "lodash";
 
-const ArticleCard = () => {
+type ArticleCardProps = {
+  id: string;
+  imageUrl: string;
+  publishedAt: string;
+  title: string;
+  summary: string;
+};
+
+const ArticleCard = ({
+  id,
+  imageUrl,
+  publishedAt,
+  title,
+  summary,
+}: ArticleCardProps) => {
+  //formating date
+  const fdate = format(new Date(publishedAt), "MMMM do,  yyyy");
+
   return (
     <div className="article-card">
       <div className="article-card__wrapper">
-        {/* <img
-          src="https://christmasworld.messefrankfurt.com/content/dam/messefrankfurt-redaktion/christmasworld/2022/images/general/christmasworld-keyvisual-2022.jpg"
-          alt="article image"
-        />
-        <div className="article-card__content">
-          <div className="article-card__content__publish-date">
-            <CalendarTodayOutlinedIcon
-              style={{ color: "#363636", fontSize: 14 }}
-              className="calendar-icon"
-            />
-            <h3>June 29th, 2021</h3>
-          </div>
-          <div className="article-card__content__article-title">
-            <h1>The 2020 World's Most Valuable Brands</h1>
-          </div>
-          <div className="article-card__content__article-description">
-            <p>
-              Non sed molestie tortor massa vitae in mattis. Eget vel consequat
-              hendrerit commodo libero aliquam. Urna arcu nunc tortor vitae
-              pharetra...
-            </p>
-          </div>
-          <Link
-            href="#"
-            underline="none"
-            className="article-card__content__read-more-button"
-          >
-            Read more
-            <ArrowForwardOutlinedIcon className="arrow-icon" />
-          </Link>
-        </div> */}
-
         <Card sx={{ maxWidth: 400 }}>
           <CardMedia
             component="img"
             height="530"
-            image="https://christmasworld.messefrankfurt.com/content/dam/messefrankfurt-redaktion/christmasworld/2022/images/general/christmasworld-keyvisual-2022.jpg"
-            alt="article image"
-            style={{ height: 217 }}
+            image={imageUrl}
+            alt={title}
+            className="article-card__content"
           />
           <CardContent>
-            <Typography
-              gutterBottom
-              variant="h6"
-              component="div"
-              style={{ display: "flex", flexDirection: "row", padding: 0 }}
-            >
-              <CalendarTodayOutlinedIcon
-                style={{
-                  color: "#363636",
-                  fontSize: 14,
-                  marginRight: 5,
-                  marginTop: 3,
-                }}
-                className="calendar-icon"
-              />
-              <h3>June 29th, 2021</h3>
+            <Typography gutterBottom variant="h6" component="div">
+              <h3>
+                <CalendarTodayOutlinedIcon
+                  style={{
+                    color: "#363636",
+                    fontSize: 14,
+                    marginRight: 5,
+                    marginTop: 3,
+                  }}
+                  className="calendar-icon"
+                />
+                {fdate}
+              </h3>
             </Typography>
             <Typography
               gutterBottom
               variant="h5"
               component="div"
-              style={{ margin: "20px 0" }}
+              className="title"
             >
-              The 2020 World's Most Valuable Brands
+              {title}
             </Typography>
-            <Typography variant="body2">
-              Non sed molestie tortor massa vitae in mattis. Eget vel consequat
-              hendrerit commodo libero aliquam. Urna arcu nunc tortor vitae
-              pharetra...
+            <Typography variant="body2" className="summary">
+              {summary}
             </Typography>
           </CardContent>
           <CardActions>
             <Button size="small" style={{ textTransform: "capitalize" }}>
               Read more
-              <ArrowForwardOutlinedIcon style={{ fontSize: 17 }} />
+              <ArrowForwardOutlinedIcon className="arrow-icon" />
             </Button>
           </CardActions>
         </Card>
