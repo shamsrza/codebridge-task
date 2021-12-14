@@ -1,4 +1,3 @@
-
 //reducer case constants
 export const FETCH_ARTICLES_LOADING = "FETCH_ARTICLES_LOADING"
 export const FETCH_ARTICLES_SUCCESS = "FETCH_ARTICLES_SUCCESS"

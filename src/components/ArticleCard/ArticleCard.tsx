@@ -1,13 +1,11 @@
 import React from "react";
 import CalendarTodayOutlinedIcon from "@material-ui/icons/CalendarTodayOutlined";
 import ArrowForwardOutlinedIcon from "@material-ui/icons/ArrowForwardOutlined";
-// import { Link } from "@material-ui/core";
-import { format } from "date-fns";
-//import moment from "moment";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
+import { format } from "date-fns";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
@@ -19,6 +17,7 @@ type ArticleCardProps = {
   publishedAt: string;
   title: string;
   summary: string;
+  posts: [];
 };
 
 const ArticleCard = ({
@@ -27,6 +26,7 @@ const ArticleCard = ({
   publishedAt,
   title,
   summary,
+  posts,
 }: ArticleCardProps) => {
   //formating date
   const fdate = format(new Date(publishedAt), "MMMM do,  yyyy");
