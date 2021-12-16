@@ -46,7 +46,7 @@ const Article = () => {
                   <h1>{filteredArticle.title}</h1>
                 </div>
                 <div className="article-page__text">{filteredArticle.url}</div>
-                <FetchArticle />
+                <FetchArticle url={filteredArticle.url} />
               </div>
             </div>
           ))}
