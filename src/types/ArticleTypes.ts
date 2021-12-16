@@ -6,9 +6,20 @@ export const FETCH_ARTICLES_FAILURE = "FETCH_ARTICLES_FAILURE"
 
 //types
 export type ArticleReducerState = {
-    articles: [],
+    articles: ArticleState[],
     isLoading: boolean,
     error: string
+}
+
+export type ArticleState={
+  id: string;
+  imageUrl: string;
+  publishedAt: string;
+  title: string;
+  summary: string;
+  posts: [];
+  disabled: boolean;
+  onClick: Function;
 }
 
 //action types

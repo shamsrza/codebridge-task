@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import CalendarTodayOutlinedIcon from "@material-ui/icons/CalendarTodayOutlined";
 import ArrowForwardOutlinedIcon from "@material-ui/icons/ArrowForwardOutlined";
 import Card from "@material-ui/core/Card";
@@ -8,6 +8,8 @@ import CardMedia from "@material-ui/core/CardMedia";
 import { format } from "date-fns";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import Highlighter from "react-highlight-words";
+import Home from "../../pages/Home/Home";
 
 import "./articlecard.scss";
 
@@ -18,6 +20,8 @@ type ArticleCardProps = {
   title: string;
   summary: string;
   posts: [];
+  onClick: Function;
+  disabled: boolean;
 };
 
 const ArticleCard = ({
@@ -26,7 +30,6 @@ const ArticleCard = ({
   publishedAt,
   title,
   summary,
-  posts,
 }: ArticleCardProps) => {
   //formating date
   const fdate = format(new Date(publishedAt), "MMMM do,  yyyy");
@@ -70,10 +73,12 @@ const ArticleCard = ({
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="small" style={{ textTransform: "capitalize" }}>
-              Read more
-              <ArrowForwardOutlinedIcon className="arrow-icon" />
-            </Button>
+            <a href={`/article/${title}`}>
+              <Button size="small" style={{ textTransform: "capitalize" }}>
+                Read more
+                <ArrowForwardOutlinedIcon className="arrow-icon" />
+              </Button>
+            </a>
           </CardActions>
         </Card>
       </div>

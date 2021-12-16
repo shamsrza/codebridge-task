@@ -4,7 +4,7 @@ import "./pagination.scss";
 const Pagination = ({ paginate }) => {
   const pageNumbers = [];
   // const limit = Math.ceil(totalPosts / postsPerPage);
-  for (let i = 1; i <= 3; i++) {
+  for (let i = 1; i <= 2; i++) {
     pageNumbers.push(i);
   }
 

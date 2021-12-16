@@ -1,18 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Appbar from "../../components/Appbar/Appbar";
+import Search from "../../components/Search/Search";
 import Pagination from "../../components/Pagination/Pagination";
 import ArticleCard from "../../components/ArticleCard/ArticleCard";
 import { AppState } from "../../types";
 import { fetchAllArticles } from "../../redux/actions";
 import LinearProgress from "@material-ui/core/LinearProgress";
+import Paper from "@material-ui/core/Paper";
+import TextField from "@material-ui/core/TextField";
+import IconButton from "@material-ui/core/IconButton";
+import SearchIcon from "@material-ui/icons/Search";
+
 import "./home.scss";
+// declare global {
+//   interface Window {
+//     MyNamespace: any;
+//   }
+// }
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(5);
-
   //get all countries from redux state
   const articles = useSelector(
     (state: AppState) => state.articleReducer.articles
@@ -40,13 +50,14 @@ const Home = () => {
   return (
     <div className="home">
       <Appbar />
-
       {/* Inner contents country list/result */}
       <div className="article-list">
         {isLoading && <LinearProgress />}
         {!isLoading &&
           currentPosts &&
-          currentPosts.map((article) => <ArticleCard {...article} />)}
+          currentPosts.map((article) => (
+            <ArticleCard {...article} id="search-node" />
+          ))}
       </div>
       {!isLoading && <Pagination paginate={paginate} />}
     </div>

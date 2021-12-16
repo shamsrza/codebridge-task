@@ -1,0 +1,40 @@
+@import "../../styles/base";
+.article-page {
+  align-items: center;
+
+  &__image {
+    height: 245px;
+    width: 100vw;
+    top: 0;
+    right: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &__content {
+    position: absolute;
+    width: 90%;
+    height: 1001px;
+    left: 5%;
+    top: 150px;
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    box-sizing: border-box;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+  }
+
+  &__go-back {
+    position: absolute;
+    padding-bottom: 75px;
+    height: 24px;
+    left: 168px;
+    top: 1186px;
+    color: #363636;
+
+    .arrow-icon {
+      font-size: 17px;
+      margin-left: 3px;
+    }
+  }
+}
