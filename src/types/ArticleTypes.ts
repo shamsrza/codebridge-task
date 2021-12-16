@@ -17,6 +17,7 @@ export type ArticleState={
   publishedAt: string;
   title: string;
   summary: string;
+  url: string;
   posts: [];
   disabled: boolean;
   onClick: Function;

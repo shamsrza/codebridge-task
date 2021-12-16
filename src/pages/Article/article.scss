@@ -9,7 +9,7 @@
     right: 0;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
   }
   &__content {
     position: absolute;
@@ -37,4 +37,9 @@
       margin-left: 3px;
     }
   }
+}
+.cover {
+  object-fit: cover;
+  height: 245px;
+  width: 100vw;
 }

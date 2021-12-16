@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Appbar from "../../components/Appbar/Appbar";
 import Search from "../../components/Search/Search";
@@ -7,11 +7,6 @@ import ArticleCard from "../../components/ArticleCard/ArticleCard";
 import { AppState } from "../../types";
 import { fetchAllArticles } from "../../redux/actions";
 import LinearProgress from "@material-ui/core/LinearProgress";
-import Paper from "@material-ui/core/Paper";
-import TextField from "@material-ui/core/TextField";
-import IconButton from "@material-ui/core/IconButton";
-import SearchIcon from "@material-ui/icons/Search";
-
 import "./home.scss";
 // declare global {
 //   interface Window {

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React from "react";
 import CalendarTodayOutlinedIcon from "@material-ui/icons/CalendarTodayOutlined";
 import ArrowForwardOutlinedIcon from "@material-ui/icons/ArrowForwardOutlined";
 import Card from "@material-ui/core/Card";
@@ -8,8 +8,8 @@ import CardMedia from "@material-ui/core/CardMedia";
 import { format } from "date-fns";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import Highlighter from "react-highlight-words";
-import Home from "../../pages/Home/Home";
+// import Highlighter from "react-highlight-words";
+// import Home from "../../pages/Home/Home";
 
 import "./articlecard.scss";
 
